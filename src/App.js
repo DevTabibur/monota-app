@@ -8,7 +8,7 @@ import Contact from './Pages/Contact/Contact';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Pages/Shared/Footer/Footer';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
-
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -23,9 +23,10 @@ function App() {
           <Contact/>
         </RequireAuth>
       }></Route>
-      
+
       <Route path="/login" element={<Login/>}></Route>
       <Route path="/register" element={<Register/>}></Route>
+      <Route path="*" element={<NotFound/>}></Route>
     </Routes>
     <Footer/>
     </>
