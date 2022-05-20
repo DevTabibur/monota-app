@@ -6,5 +6,12 @@
 1. React
 2. React Bootstrap
 3. React Router
+4. SASS
+5. React Toastify
+6. Firebase
+7. React Firebase hooks
+8. React Icons
+9. Google Font
+10.React Spinner (npm)
 
 ## Website Feature
