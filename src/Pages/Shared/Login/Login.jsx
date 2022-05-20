@@ -152,7 +152,6 @@ const Login = () => {
                 </h2>
 
                 <Form onSubmit={handleLogin}>
-                  {/* <ToastContainer /> */}
                   <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
 
@@ -161,9 +160,9 @@ const Login = () => {
                       type="email"
                       placeholder="Enter email"
                     />
-                    {/* {errors?.email && (
+                    {errors?.email && (
                       <p className="error-text">{errors.email}</p>
-                    )} */}
+                    )}
 
                     <Form.Text className="text-muted">
                       We'll never share your email with anyone else.
@@ -178,9 +177,9 @@ const Login = () => {
                       type="password"
                       placeholder="Password"
                     />
-                    {/* {errors?.password && (
+                    {errors?.password && (
                       <p className="error-text">{errors.password}</p>
-                    )} */}
+                    )}
                   </Form.Group>
 
                   <Button type="submit" className="w-100 d-block login-btn">
