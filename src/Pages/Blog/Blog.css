@@ -1,0 +1,21 @@
+.blog-section{
+    background-color: #babab802;
+}
+.blog-parent-col{
+    color: #06113C;
+}
+.blog-parent-col .title{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+}
+.blog-parent-col .title2{
+    font-family: 'Poppins', sans-serif;
+
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.blog-parent-col .description{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}

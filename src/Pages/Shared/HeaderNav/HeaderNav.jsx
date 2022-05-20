@@ -28,6 +28,9 @@ const HeaderNav = () => {
               <Nav.Link as={Link} className="header-link" to="/contact">
                 CONTACT
               </Nav.Link>
+              <Nav.Link as={Link} className="header-link" to="/blog">
+                BLOG
+              </Nav.Link>
 
               {/* // only login user can see this route */}
               {user && (
