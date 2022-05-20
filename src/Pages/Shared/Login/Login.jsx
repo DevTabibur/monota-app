@@ -10,6 +10,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/firebase.init.js";
+import GoogleLoader from '../../GoogleLoader/GoogleLoader';
 
 const Login = () => {
   const [user1] = useAuthState(auth);
@@ -28,11 +29,11 @@ const Login = () => {
   // }, [])
 
   // spinnerloader
-  // let loader ;
-  //  if(loading || loading2){
-  //   loader = <GoogleLoader/>;
+  let loader ;
+   if(loading || loading2){
+    loader = <GoogleLoader/>;
 
-  //  }
+   }
 
   const [userInfo, setUserInfo] = useState({
     email: "",
@@ -216,7 +217,7 @@ const Login = () => {
                     <p> Continue with Google </p>
                   </button>
 
-                  {/* {loader} */}
+                  {loader}
                 </div>
               </div>
             </Col>
