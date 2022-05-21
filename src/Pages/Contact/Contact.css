@@ -1,16 +1,13 @@
 @font-face {
   font-family: "Montserrat-Regular";
-  /* src: url("../fonts/Montserrat/Montserrat-Regular.ttf");  */
   src: url("../../Assets/fonts/Montserrat/Montserrat-Regular.ttf");
 }
 @font-face {
   font-family: "Montserrat-Bold";
-  /* src: url("../fonts/Montserrat/Montserrat-Bold.ttf");  */
   src: url("../../Assets//fonts/Montserrat/Montserrat-Bold.ttf");
 }
 @font-face {
   font-family: "Montserrat-SemiBold";
-  /* src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf");  */
   src: url("../../Assets/fonts/Montserrat/Montserrat-SemiBold.ttf");
 }
 * {
@@ -19,12 +16,12 @@
   box-sizing: border-box;
 }
 
-/* .contact-form body {
+.contact-form body {
   font-family: "Montserrat-Regular";
   color: #fff;
   font-size: 15px;
   margin: 0;
-} */
+}
 
 .form-group input,
 .form-group textarea,
@@ -61,6 +58,7 @@ a:hover {
 
 .wrapper .inner {
   max-width: 758px;
+  /* max-width: 500px; */
   margin: auto;
   background: #39459b;
   border: 10px solid #0d99d7;
