@@ -11,7 +11,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="my-3">
+    <div className="contact-form my-3">
       <div className="wrapper py-4">
             <div className="inner">
               <form onSubmit={handleContactForm}>

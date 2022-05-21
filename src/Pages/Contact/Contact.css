@@ -19,31 +19,20 @@
   box-sizing: border-box;
 }
 
-body {
+/* .contact-form body {
   font-family: "Montserrat-Regular";
   color: #fff;
   font-size: 15px;
   margin: 0;
-}
+} */
 
-input,
-textarea,
-select,
-.contact-submit-btn {
+.form-group input,
+.form-group textarea,
+.form-group select,
+.form-group .contact-submit-btn {
   font-family: "Montserrat-Regular";
   color: #fff;
   font-size: 15px;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul {
-  margin: 0;
 }
 
 img {
@@ -54,16 +43,14 @@ ul {
   padding-left: 0;
   margin-bottom: 0;
 }
-
 a:hover {
   text-decoration: none;
 }
-
 :focus {
   outline: none;
 }
 
-.wrapper {
+.contact-form .wrapper {
   min-height: 100vh;
   max-width: 100%;
   display: flex;
@@ -72,7 +59,7 @@ a:hover {
   background-size: cover;
 }
 
-.inner {
+.wrapper .inner {
   max-width: 758px;
   margin: auto;
   background: #39459b;
@@ -85,31 +72,34 @@ a:hover {
   -o-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
-textarea {
+.contact-form textarea {
   resize: none;
 }
 
-h3 {
+.inner h3 {
   text-transform: uppercase;
   font-size: 45px;
   font-family: "Montserrat-Bold";
   text-align: center;
   margin-bottom: 12px;
+  color: #fff;
 }
 
-p {
+.inner p {
   text-align: center;
   padding: 0 10px;
   margin-bottom: 55px;
   line-height: 1.8;
+  color: #fff;
+
 }
 
-.form-group {
+.inner .form-group {
   position: relative;
   display: block;
   margin-bottom: 48px;
 }
-.form-group span {
+.contact-form .form-group span {
   font-size: 15px;
   color: #00ade6;
   position: absolute;
@@ -118,7 +108,7 @@ p {
   transform-origin: 0 0;
   cursor: text;
 }
-.form-group span.border {
+.contact-form .form-group span.border {
   height: 2px;
   display: block;
   position: absolute;
@@ -130,7 +120,7 @@ p {
   background: #fff;
 }
 
-.form-control {
+.contact-form .form-control {
   border: none;
   border-bottom: 2px solid #00ade6;
   display: block;
@@ -140,27 +130,27 @@ p {
   background: none;
   font-family: "Montserrat-SemiBold";
 }
-.form-control:focus,
-.form-control:valid {
+.contact-form .form-control:focus,
+.contact-form .form-control:valid {
   border-bottom: 2px solid #fff;
   background-color: #39459b;
   box-shadow: none;
 }
-.form-control:focus + span,
+.contact-form .form-control:focus + span,
 .form-control:valid + span {
   transform: translateY(-22px) scale(0.8);
   color: rgb(79, 255, 255);
 }
-.form-control:focus + span + .border,
+.contact-form .form-control:focus + span + .border,
 .form-control:valid + span + .border {
   transform: scaleX(1);
 }
 
-.form-control:focus {
+.contact-form .form-control:focus {
   color: #fff;
 }
 
-.contact-submit-btn {
+.contact-form .contact-submit-btn {
   border: none;
   width: 162px;
   height: 51px;
@@ -184,7 +174,7 @@ p {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-.contact-submit-btn .submit-arrow-icon {
+.contact-form .contact-submit-btn .submit-arrow-icon {
   margin-left: 10px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -195,7 +185,7 @@ p {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.contact-submit-btn:before {
+.contact-form .contact-submit-btn:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -215,14 +205,14 @@ p {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.contact-submit-btn:hover {
+.contact-form .contact-submit-btn:hover {
   border-color: transparent;
 }
-.contact-submit-btn:hover:before {
+.contact-form .contact-submit-btn:hover:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
-.contact-submit-btn:hover .submit-arrow-icon{
+.contact-form .contact-submit-btn:hover .submit-arrow-icon{
   -webkit-transform: translateX(4px);
   transform: translateX(4px);
 }
@@ -237,7 +227,7 @@ p {
     padding: 0;
   }
 
-  .inner {
+  .contact-form .inner {
     padding: 27px 20px 37px;
     border: none;
     box-shadow: none;
