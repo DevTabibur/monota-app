@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import auth from "../../../Firebase/firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
+import logo from '../../../Assets/monota-img/logo.png'
 
 const HeaderNav = () => {
   const [user] = useAuthState(auth);
@@ -14,7 +15,7 @@ const HeaderNav = () => {
       <Navbar className="shadow header" collapseOnSelect expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">
-            PROJECT NAME
+            <img src={logo} alt="logo" />
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

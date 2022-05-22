@@ -11,6 +11,8 @@ import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import NotFound from './Pages/NotFound/NotFound';
 import Blog from './Pages/Blog/Blog';
 
+// demo https://opencart.opencartworks.com/themes/so_monota/layout6/
+
 function App() {
   return (
     <>
@@ -30,7 +32,7 @@ function App() {
       <Route path="/register" element={<Register/>}></Route>
       <Route path="*" element={<NotFound/>}></Route>
     </Routes>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   );
 }

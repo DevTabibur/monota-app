@@ -9,44 +9,38 @@ import "swiper/css";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css/autoplay";
 import SwiperCore from "swiper";
+import slider1 from "../../../Assets/monota-img/slide1-1920x880.jpg";
+import slider2 from "../../../Assets/monota-img/slide2-1920x880.jpg";
+import slider3 from "../../../Assets/monota-img/slide3-1920x880.jpg";
 
 const HeroBanner = () => {
   SwiperCore.use([Autoplay]);
 
-  const [banner, setBanner] = useState([]);
-  useEffect(() => {
-    fetch("slider-db.json")
-      .then((res) => res.json())
-      .then((data) => setBanner(data));
-  }, []);
-  const handleReadMoreBtn = () => {
-    alert();
-  };
   return (
     <>
       <Swiper
-        modules={[Autoplay]}
-        slidesPerView={4}
-        spaceBetween={8}
-        loop={true}
+        spaceBetween={30}
+        centeredSlides={true}
         autoplay={{
-          delay: 2000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        {banner.map((item) => (
-          <SwiperSlide key={item.id} className="swiper-slider-parent">
-            <img src={item.image} alt="item__img" />
-            <div className="slider-inner-info">
-              <h4>{item.category}</h4>
-              <h4>{item.title}</h4>
-              <button className="slider-read-btn" onClick={handleReadMoreBtn}>
-                READ MORE
-              </button>
-            </div>
-          </SwiperSlide>
-        ))}
+        <SwiperSlide>
+          <img src={slider1} alt="slider-1" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slider2} alt="slider-1" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slider3} alt="slider-1" />
+        </SwiperSlide>
       </Swiper>
     </>
   );
