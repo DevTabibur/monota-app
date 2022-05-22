@@ -9,13 +9,14 @@ import { AiFillCar, AiOutlineSafetyCertificate } from "react-icons/ai";
 import {MdOutlineSupportAgent} from 'react-icons/md';
 import Reviews from "../Shared/Reviews/Reviews";
 import Services from "../Shared/Services/Services";
+import FindParts from "../Shared/FindParts/FindParts";
 
 
 const Home = () => {
   return (
     <>
-      <HeroBanner />
-      <Container className="services py-5">
+      {/* <HeroBanner /> */}
+      {/* <Container className="services py-5">
         <Row className='g-3'>
           <Col lg={4} md={4} sm={6} className="">
             <div className="icon-box d-flex justify-content-center align-items-center">
@@ -42,11 +43,12 @@ const Home = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
 
       {/* Reviews */}
       {/* <Reviews/> */}
-      <Services/>
+      {/* <Services/> */}
+      <FindParts/>
     </>
   );
 };
