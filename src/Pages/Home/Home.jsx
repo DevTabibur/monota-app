@@ -6,18 +6,20 @@ import { Col, Container, Row } from "react-bootstrap";
 import HeroBanner from "../Shared/HeroBanner/HeroBanner";
 import Contact from "../Contact/Contact";
 import { AiFillCar, AiOutlineSafetyCertificate } from "react-icons/ai";
-import {MdOutlineSupportAgent} from 'react-icons/md';
+import { MdOutlineSupportAgent } from "react-icons/md";
 import Reviews from "../Shared/Reviews/Reviews";
 import Services from "../Shared/Services/Services";
 import FindParts from "../Shared/FindParts/FindParts";
 import Summary from "../Shared/Summary/Summary";
-
+import Parts from "../Shared/Parts/Parts";
+import useParts from "../../Hooks/useParts";
 
 const Home = () => {
+  const [parts, setParts] = useParts();
   return (
     <>
-      {/* <HeroBanner /> */}
-      {/* <Container className="services py-5">
+      {/* <HeroBanner />
+      <Container className="services py-5">
         <Row className='g-3'>
           <Col lg={4} md={4} sm={6} className="">
             <div className="icon-box d-flex justify-content-center align-items-center">
@@ -46,11 +48,21 @@ const Home = () => {
         </Row>
       </Container> */}
 
+      {/* <Services/> */}
+      <FindParts />
+
+      {/* tools/parts */}
+      <Container className="py-4">
+        <Row className="g-4">
+          {parts.map((item) => (
+            <Parts key={item._id} item={item} />
+          ))}
+        </Row>
+      </Container>
+
+      {/* <Summary/> */}
       {/* Reviews */}
       {/* <Reviews/> */}
-      {/* <Services/> */}
-      {/* <FindParts/> */}
-      <Summary/>
     </>
   );
 };

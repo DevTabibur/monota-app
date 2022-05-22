@@ -1,10 +1,50 @@
 [
-    {
-        "id": 1,
-        "name": "Car",
-        "description": "lorem10",
-        "minimumQuantity" : 2000,
-        "availableQuantity" : 10000,
-        "image" :"hello"
-    }
+  {
+    "name": "Super Fast Motor",
+    "description": "This product is good for your car and bikes. It can increase your car/bike performance as well as top speed.",
+    "price": 65.00,
+    "minimumQuantity": 2000,
+    "availableQuantity": 10000,
+    "image": "https://i.ibb.co/v3y51zy/1-270x270.jpg"
+  },
+  {
+    "name": "FALCATRA GROUND",
+    "description": "1.100% Brand New., 2.Contains 1 PCS, 3.Simple and easy",
+    "price": 78.00,
+    "minimumQuantity": 2000,
+    "availableQuantity": 10000,
+    "image": "https://i.ibb.co/KrvSNGg/1-270x2702.jpg"
+  },
+  {
+    "name": "RUMP RIBEYEA",
+    "description": "This product is good for your car and bikes. It can increase your car/bike performance as well as top speed.",
+    "price":65.00,
+    "minimumQuantity": 2000,
+    "availableQuantity": 10000,
+    "image": "https://i.ibb.co/qyVrqv2/1-270x2703.jpg"
+  },
+  {
+    "name": "ERCITA TIONI IDUNT",
+    "description": "Car Racing Oil. It's neat and clean and 100% testified oil for your car. It's increase your car performance..",
+    "price": 45.00,
+    "minimumQuantity": 2000,
+    "availableQuantity": 10000,
+    "image": "https://i.ibb.co/vc8FZx4/3-270x270.jpg"
+  },
+  {
+    "name": "BENDERLOIN OFFICIA",
+    "description": "This product is good for your car and bikes. It can increase your car/bike performance as well as top speed.",
+    "price": 60.00,
+    "minimumQuantity": 2000,
+    "availableQuantity": 10000,
+    "image": "https://i.ibb.co/L8Zm545/4-270x270.jpg"
+  },
+  {
+    "name": "CHICKEN SWINESHA",
+    "description": "One of the best Mobil it's. This Mobil also increase your car performance, top speed and also it's good for your engine",
+    "price": 50.00,
+    "minimumQuantity": 2000,
+    "availableQuantity": 10000,
+    "image": "https://i.ibb.co/QPCDk4c/5-270x270.jpg"
+  }
 ]
