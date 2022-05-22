@@ -14,6 +14,7 @@
 9. Google Font
 10. React Spinner (npm)
 11. React Swiper (npm)
+12. React Hook Form
 
 ## Website Feature
 

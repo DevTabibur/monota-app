@@ -1,6 +1,7 @@
 import React from "react";
 import "./Parts.css";
 import { Button, Card, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Parts = ({ item }) => {
   const {
@@ -22,7 +23,7 @@ const Parts = ({ item }) => {
           <h6>Minimum Order Quantity: {minimumQuantity}</h6>
           <h6>Price: ${price}</h6>
           <Card.Text>{description}</Card.Text>
-          <Button variant="danger" className='w-75 text-center'>PURCHASE</Button>
+          <Button as={Link} to={`/purchase/${_id}`} variant="danger" className='w-75 text-center'>PURCHASE</Button>
         </Card.Body>
       </Card>
     </Col>

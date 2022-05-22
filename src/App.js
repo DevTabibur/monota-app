@@ -11,6 +11,10 @@ import RequireAuth from "./Pages/RequireAuth/RequireAuth";
 import NotFound from "./Pages/NotFound/NotFound";
 import Blog from "./Pages/Blog/Blog";
 import Portfolio from "./Pages/Portfolio/Portfolio";
+import Purchase from "./Pages/Purchase/Purchase";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 // demo https://opencart.opencartworks.com/themes/so_monota/layout6/
 
@@ -24,12 +28,17 @@ function App() {
         <Route path="/blog" element={<Blog />}></Route>
 
         <Route path="/portfolio" element={<Portfolio />}></Route>
+        <Route path="/purchase/:id" element={
+          <RequireAuth>
+            <Purchase/>
+          </RequireAuth>
+        }></Route>
 
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 }
