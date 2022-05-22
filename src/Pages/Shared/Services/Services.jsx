@@ -37,7 +37,7 @@ const Services = () => {
         <SwiperSlide className="swiper-slider-parent">
             <img src={service2} alt="service__img" />
             <div className="slider-inner-info">
-              <h4>Body Parts</h4>
+              <h4>Light Parts</h4>
               <button className="slider-read-btn">
                 EXPLORE MORE
               </button>
@@ -46,7 +46,7 @@ const Services = () => {
         <SwiperSlide className="swiper-slider-parent">
             <img src={service3} alt="service__img" />
             <div className="slider-inner-info">
-              <h4>Light Parts</h4>
+              <h4>Body Parts</h4>
               <button className="slider-read-btn">
                 EXPLORE MORE
               </button>
@@ -55,7 +55,7 @@ const Services = () => {
         <SwiperSlide className="swiper-slider-parent">
             <img src={service4} alt="service__img" />
             <div className="slider-inner-info">
-              <h4>Repair Parts</h4>
+              <h4>Wheels & Tires</h4>
               <button className="slider-read-btn">
                 EXPLORE MORE
               </button>
@@ -64,7 +64,7 @@ const Services = () => {
         <SwiperSlide className="swiper-slider-parent">
             <img src={service5} alt="service__img" />
             <div className="slider-inner-info">
-              <h4>Wheels & Tires</h4>
+              <h4>Repair Parts</h4>
               <button className="slider-read-btn">
                 EXPLORE MORE
               </button>
