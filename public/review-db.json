@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Michael Mike",
+        "ratings": 4.5,
+        "review" : "So fast to start up, its amazing...turn it on and in a few seconds you are working. Simple to set up and simple to use. Probably not a lot of bells and whistles but for the price a great laptop!",
+        "image": "https://i.ibb.co/fxMdt6G/profile-3.jpg"
+    },
+    {
+        "name": "Angelina Sofia",
+        "ratings": 5,
+        "review" : "This Chromebook is solidly in the lower middle of the pack, so don't get it. Either go for the cheaper ASUS ruggadized models, or go more expensive for models with touchscreen and a real processor, but don't get this one. Way too slow. You can't watch any type of TV streaming on it, it's so laggy it hurts.",
+        "image": "https://i.ibb.co/82fMWPk/profile-4.jpg"
+    },
+    {
+        "name": "Jackie Mouse",
+        "ratings": 4.5,
+        "review" : "I’m a sysadmin and spend most of my time between browser-based tools and a command line. Crostini works great on this unit, so getting access to Linux apps (based on the Debian 9 armhf build) was easy, including X11-based apps. This unit does not support Android apps, but then comparatively few do, so no points lost there. The SoC is a touch on the slow side, but not too bad!",
+        "image": "https://i.ibb.co/WGvdFPX/profile-5.jpg"
+    },
+    {
+        "name": "Tom Holland",
+        "ratings": 5,
+        "review" : "This is my first Chromebook and I love it. The simplicity of this thing is amazing, I have an expensive Windows 10 PC that drives me crazy, I find Windows has become a very intrusive and confusing computer, that bothers you with a load of notifications and pop ups.",
+        "image": "https://i.ibb.co/7NB3B09/profile-6.jpg"
+    },
+    {
+        "name": "Will Rock",
+        "ratings": 4.5,
+        "review" : "The FHD (1920x1080p) version of the Lenovo S330 definitely does NOT have an IPS display. The panel is reminiscent of what you'd see on a Windows XP era laptop. No matter what angle you choose, it looks washed out. Some colors are so undersaturated that it's hard to see gradients.",
+        "image": "https://i.ibb.co/288bMdC/profile-7.jpg"
+    },
+    {
+        "name": "Genellia jesmin",
+        "ratings": 4.5,
+        "review" : "I was nervous about ordering this Chromebook many months before arrival. It was a Christmas gift for my husband. However, it arrived as scheduled in great condition. We had been looking for an affordable Chromebook of good quality for watching videos, browsing the internet and using google documents. The battery life is awesome and the resolution is great. He's been using it since December and is very happy with it.",
+        "image": "https://i.ibb.co/yP1gvVW/profile-8.jpg"
+    }
+]

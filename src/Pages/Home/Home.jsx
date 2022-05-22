@@ -13,9 +13,12 @@ import FindParts from "../Shared/FindParts/FindParts";
 import Summary from "../Shared/Summary/Summary";
 import Parts from "../Shared/Parts/Parts";
 import useParts from "../../Hooks/useParts";
+import useReview from '../../Hooks/useReview';
 
 const Home = () => {
   const [parts, setParts] = useParts();
+  const [review, setReview] = useReview([]);
+
   return (
     <>
       {/* <HeroBanner />
@@ -62,7 +65,19 @@ const Home = () => {
 
       {/* <Summary/> */}
       {/* Reviews */}
-      {/* <Reviews/> */}
+      <Container>
+      <h2 className="title mt-3 mb-5 pb-4 d-flex justify-content-center">
+        What Client says about us
+      </h2>
+        <Row>
+          {
+            review.map((item) => <Reviews
+              key={item._id}
+              item={item}
+            />)
+          }
+        </Row>
+      </Container>
     </>
   );
 };
