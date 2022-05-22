@@ -10,6 +10,7 @@ import {MdOutlineSupportAgent} from 'react-icons/md';
 import Reviews from "../Shared/Reviews/Reviews";
 import Services from "../Shared/Services/Services";
 import FindParts from "../Shared/FindParts/FindParts";
+import Summary from "../Shared/Summary/Summary";
 
 
 const Home = () => {
@@ -48,7 +49,8 @@ const Home = () => {
       {/* Reviews */}
       {/* <Reviews/> */}
       {/* <Services/> */}
-      <FindParts/>
+      {/* <FindParts/> */}
+      <Summary/>
     </>
   );
 };

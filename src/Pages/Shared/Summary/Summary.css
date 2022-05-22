@@ -1,0 +1,26 @@
+.summary-section {
+  background: url(../../../Assets/Images/summary-bg.png) no-repeat center;
+  background-size: cover;
+}
+.summary-box{}
+.summary-box .icon-div{}
+.summary-box .icon-div .icon {
+    color: #d4212a !important;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    padding: 15px;
+    border: 1px solid gainsboro;
+    margin-bottom: 5px;
+    font-size: -40px;
+}
+.summary-box .info{}
+.summary-box .info h4{
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+.summary-box .info p{
+    font-weight: 500;
+    font-size: 25px;
+}
