@@ -2,68 +2,69 @@ import React from "react";
 import "./Footer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, InputGroup, FormControl } from "react-bootstrap";
-import { BsFacebook, BsTwitter, BsGithub } from "react-icons/bs";
+import { BsFacebook, BsTwitter, BsGithub , BsFillTelephoneFill} from "react-icons/bs";
 import { ImWhatsapp } from "react-icons/im";
+import logo from '../../../Assets/monota-img/logo.png';
+import {AiTwotoneMail} from 'react-icons/ai';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
   return (
-    <>
-      <>
-        {/* footer */}
-        <footer id="footer" className="footer py-5">
-          <div className="container">
-            <div className="row g-4">
-              <div className="col-md-6">
-                <div className="footer-logo">LOGO HERE</div>
-                <ul>
-                  <li>
-                    <span>
-                      <i className="fa-solid fa-location-dot"></i>
-                    </span>
-                    84 Main Rd E, St Albans VIC 3021, Australia
-                  </li>
-                  <li>abc@gmail.com</li>
-                  <li>+88 01307-588223</li>
-                </ul>
-              </div>
+    <div className="footer" id="footer">
+    <Container className="py-5">
+      <Row className="g-4">
 
-              <div className="col-md-6">
-                <h5>Useful Social Links</h5>
-                <div className="footer-social-media">
-                  <div className="social-icon">
-                    <ul className="d-flex">
-                      <li>
-                        <BsFacebook className="flex-icon" />
-                      </li>
-                      <li>
-                        <BsTwitter className="flex-icon" />
-                      </li>
-                      <li>
-                        <ImWhatsapp className="flex-icon" />
-                      </li>
-                      <li>
-                        <BsGithub className="flex-icon" />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <Col md={4} lg={4} sm={12} className="bg-light rounded p-4 text-center">
+          <div className="footer-logo">
+            <img src={logo} alt="logo" />
           </div>
-        </footer>
+        </Col>
+
+        <Col md={4} lg={4} sm={12} className="text-center">
+          <h2 className="title">Contact Us</h2>
+          <ul className="list-icon">
+            <li>
+              <span> <AiTwotoneMail className="icon"/>
+              tobiburrohman2@gmail.com
+              </span>
+              
+            </li>
+            <li>
+            <span> <BsFillTelephoneFill className="icon"/>
+              +8801305-588223
+              </span>
+            </li>
+            <li>
+              <span><BsFacebook className="icon"/></span>
+              <span><BsTwitter className="icon"/></span>
+              <span><BsGithub className="icon"/></span>
+            </li>
+          </ul>
+        </Col>
+
+        <Col md={4} lg={4} sm={12} className="text-center">
+        <h2 className="title">Information</h2>
+        <Link to="/#">Blogs</Link>
+        <Link to="/#">About Us</Link>
+        <Link to="/#">Reviews</Link>
+        </Col>
+
+        
+      </Row>
+    </Container>
+
 
         {/* footer bottom */}
-        <section id="footer-bottom" className="footer-bottom">
+        {/* <section id="footer-bottom" className="footer-bottom">
           <div className="container">
             <p className="text-center copyright py-3">
               Copyright © 2022 Dev Tabibur all rights reserved.
             </p>
           </div>
-        </section>
-      </>
-    </>
+        </section> */}
+    </div>
   );
 };
 
