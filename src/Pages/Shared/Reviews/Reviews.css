@@ -57,3 +57,35 @@ body{
     font-weight: 300;
     font-size: 18px;
 }
+/* 
+mobile res */
+
+@media only screen and (max-width: 428px) {
+    .box-left h3 {
+        margin-top: 50px;
+        font-weight: 500;
+        font-size: 15px;
+    }
+    .box-left hr {
+        color: #d4212a;
+        width: 100px;
+        height: 4px;
+        border-radius: 10px;
+        margin: 5px 0;
+    }
+    .box-left p{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    /* .box-right{
+        margin-left: 5%;
+        position: relative;
+        width: 50%;
+    } */
+    .box-right p{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+    }
+  }

@@ -51,25 +51,26 @@ const Home = () => {
         </Row>
       </Container> */}
 
-      {/* <Services/> */}
-      <FindParts />
+      {/* <Services/>
+      <FindParts /> */}
 
       {/* tools/parts */}
-      <Container className="py-4">
+      {/* <Container className="py-4">
         <Row className="g-4">
           {parts.map((item) => (
             <Parts key={item._id} item={item} />
           ))}
         </Row>
-      </Container>
+      </Container> */}
 
       {/* <Summary/> */}
+
       {/* Reviews */}
-      <Container>
+      <Container className="pt-4">
       <h2 className="title mt-3 mb-5 pb-4 d-flex justify-content-center">
         What Client says about us
       </h2>
-        <Row>
+        <Row className='g-4'>
           {
             review.map((item) => <Reviews
               key={item._id}

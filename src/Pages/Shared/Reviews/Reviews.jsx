@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Reviews.css";
 import useReview from "../../../Hooks/useReview";
+import { Col } from "react-bootstrap";
 
 const Reviews = ({ item }) => {
   const { name, image, ratings, review } = item;
   return (
     <>
       
-      <div className="col-lg-6 col-md-6 col-sm-12 g-4 mb-5 pb-2">
+      <Col md={6} lg={6} sm={12} className="mb-5 pb-2">
         <div className="review-box d-flex">
           <div className="box-left">
             <img className="author-img" src={image} alt="author__img" />
@@ -20,7 +21,7 @@ const Reviews = ({ item }) => {
             <p>{review.slice(0, 80)}...</p>
           </div>
         </div>
-      </div>
+      </Col>
     </>
   );
 };
