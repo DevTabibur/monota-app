@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -6,6 +7,7 @@ import HeroBanner from "../Shared/HeroBanner/HeroBanner";
 import Contact from "../Contact/Contact";
 import { AiFillCar, AiOutlineSafetyCertificate } from "react-icons/ai";
 import {MdOutlineSupportAgent} from 'react-icons/md';
+import Reviews from "../Shared/Reviews/Reviews";
 
 
 const Home = () => {
@@ -13,7 +15,7 @@ const Home = () => {
     <>
       <HeroBanner />
       <Container className="services py-5">
-        <Row>
+        <Row className='g-3'>
           <Col lg={4} md={4} sm={6} className="">
             <div className="icon-box d-flex justify-content-center align-items-center">
               <div className="icon">
@@ -35,11 +37,14 @@ const Home = () => {
               <div className="icon">
                 <MdOutlineSupportAgent className="inner-icon"/>
               </div>
-              <h2>ONLINE SUPPORT</h2>
+              <h2>24/7 SUPPORT</h2>
             </div>
           </Col>
         </Row>
       </Container>
+
+      {/* Reviews */}
+      {/* <Reviews/> */}
     </>
   );
 };
