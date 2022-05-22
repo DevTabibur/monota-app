@@ -8,6 +8,7 @@ import Contact from "../Contact/Contact";
 import { AiFillCar, AiOutlineSafetyCertificate } from "react-icons/ai";
 import {MdOutlineSupportAgent} from 'react-icons/md';
 import Reviews from "../Shared/Reviews/Reviews";
+import Services from "../Shared/Services/Services";
 
 
 const Home = () => {
@@ -45,6 +46,7 @@ const Home = () => {
 
       {/* Reviews */}
       {/* <Reviews/> */}
+      <Services/>
     </>
   );
 };

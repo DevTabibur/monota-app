@@ -17,7 +17,7 @@ const NotFound = () => {
         <div className="col-md-6 d-flex justify-content-center align-items-center">
           <div className="error-page-info ">
             <h2 className="mb-5">There is nothing you want!</h2>
-            <Link to="/home" className="btn btn-primary w-100 mb-3">
+            <Link to="/home" className="btn btn-danger w-100 mb-3">
               Go Back to Home
             </Link>
             {/* <Link to="/about" className="btn btn-danger w-100">
