@@ -26,9 +26,10 @@ const HeaderNav = () => {
                 HOME
               </Nav.Link>
 
-              <Nav.Link as={Link} className="header-link" to="/contact">
-                CONTACT
+              <Nav.Link as={Link} className="header-link" to="/portfolio">
+                PORTFOLIO
               </Nav.Link>
+
               <Nav.Link as={Link} className="header-link" to="/blog">
                 BLOG
               </Nav.Link>
