@@ -3,7 +3,7 @@
     background: url(http://localhost:3000/static/media/bg-footer3.cd8f2ad18903e3c37a8d.jpg) no-repeat;
     background-size: cover;
     background-position: center;
-    height: 300px;
+    /* height: 300px; */
 }
 #footer{
     color: #fff;
