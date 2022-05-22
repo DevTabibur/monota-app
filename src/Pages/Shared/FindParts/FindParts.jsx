@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import "./FindParts.css";
@@ -5,7 +6,7 @@ import "./FindParts.css";
 const FindParts = () => {
   const handleFindingProduct = (e) => {
     e.preventDefault();
-    console.log();
+    console.log('hi');
   };
 
   return (
