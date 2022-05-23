@@ -114,7 +114,6 @@ const Register = () => {
     }
   }, [])
 
-  console.log('token', token)
 
   return (
     <>

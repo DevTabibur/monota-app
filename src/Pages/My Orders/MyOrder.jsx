@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
@@ -41,6 +42,30 @@ const MyOrder = () => {
         });
     }
   };
+
+  useEffect(() => {
+    const getItems = async () => {
+      const email = user?.email;
+      const url = `https://rocky-caverns-33077.herokuapp.com/singleItem?email=${email}`;
+      
+      try {
+        const { data } = await axios.get(url, {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        setItems(data);
+      } catch (error) {
+
+        if (error.response.status === 403 || error.response.status === 401) {
+          // signOut(auth);
+          // navigate("/signin");
+        }
+        toast.error(error.message, { toastId: "abc" });
+      }
+    };
+    getItems();
+  }, [user]);
 
   
   return (
