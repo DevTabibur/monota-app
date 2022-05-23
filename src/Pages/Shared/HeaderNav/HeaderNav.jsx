@@ -10,7 +10,6 @@ import logo from "../../../Assets/monota-img/logo.png";
 
 const HeaderNav = () => {
   const [user] = useAuthState(auth);
-  console.log('user', user);
   return (
     <>
       <Navbar className="shadow header" collapseOnSelect expand="lg">
@@ -36,6 +35,8 @@ const HeaderNav = () => {
               </Nav.Link>
 
               {/* // only login user can see this route */}
+              
+
               {user && (
                 <>
                   {" "}
@@ -45,6 +46,9 @@ const HeaderNav = () => {
                 </>
               )}
 
+              {
+                user && <Nav.Link className="header-link" to="/">{user.displayName}</Nav.Link>
+              }
               {user ? (
                 <button
                   className="header-link sign-out-btn"

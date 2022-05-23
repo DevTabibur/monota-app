@@ -36,6 +36,8 @@ const Register = () => {
 
     const handleNameChange =(e)=>{
       const userName = e.target.userName;
+      setUserInfo({...userInfo, userName: userName});
+      setErrors({...errors, userName: ""});
       console.log(userName);
     }
   const handleEmailChange = (e) => {
@@ -105,9 +107,11 @@ const Register = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  if (user1) {
-    navigate(from, { replace: true });
-  }
+  useEffect(()=>{
+    if (user1) {
+      navigate(from, { replace: true });
+    }
+  }, [])
 
   // console.log('token', token)
 
