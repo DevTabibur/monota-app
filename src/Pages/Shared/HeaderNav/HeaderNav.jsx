@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import auth from "../../../Firebase/firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
-import logo from '../../../Assets/monota-img/logo.png'
+import logo from "../../../Assets/monota-img/logo.png";
 
 const HeaderNav = () => {
   const [user] = useAuthState(auth);
@@ -38,18 +38,8 @@ const HeaderNav = () => {
               {user && (
                 <>
                   {" "}
-                  <Nav.Link
-                    as={Link}
-                    className="header-link"
-                    to="/manage-inventory"
-                  >
-                    Manage Inventory
-                  </Nav.Link>
-                  <Nav.Link as={Link} className="header-link" to="/add-item">
-                    Add Item
-                  </Nav.Link>
-                  <Nav.Link as={Link} className="header-link" to="/my-items">
-                    My Items
+                  <Nav.Link as={Link} className="header-link" to="/dashboard">
+                    DASHBOARD
                   </Nav.Link>
                 </>
               )}
