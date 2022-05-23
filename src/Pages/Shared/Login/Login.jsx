@@ -11,6 +11,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/firebase.init.js";
 import GoogleLoader from '../../GoogleLoader/GoogleLoader';
+import useToken from "../../../Hooks/useToken";
 
 const Login = () => {
   const [user1] = useAuthState(auth);
@@ -21,12 +22,12 @@ const Login = () => {
   const [signInWithGoogle, googleUser, loading2, googleError] =
     useSignInWithGoogle(auth);
 
-  // const [token] = useToken(user1);
-  // useEffect(()=>{
-  //   if (token) {
-  //     navigate(from, { replace: true });
-  //   }
-  // }, [])
+  const [token] = useToken(user1);
+  useEffect(()=>{
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [])
 
   // spinnerloader
   let loader ;
@@ -81,11 +82,11 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  // useEffect(()=>{
-  //   if (token) {
-  //     navigate(from, { replace: true });
-  //   }
-  // }, [])
+  useEffect(()=>{
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [])
 
   useEffect(() => {
     const error = hookError || googleError;

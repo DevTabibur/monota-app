@@ -8,12 +8,13 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
+import useToken from "../../../Hooks/useToken";
 import "./Register.css";
 
 const Register = () => {
   const [user1] = useAuthState(auth);
 
-  // const token = useToken(user1);
+  const token = useToken(user1);
   const [sendEmailVerification] = useSendEmailVerification(auth);
 
   const [showPass, setShowPass] = useState(false);
@@ -113,7 +114,7 @@ const Register = () => {
     }
   }, [])
 
-  // console.log('token', token)
+  console.log('token', token)
 
   return (
     <>
