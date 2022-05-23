@@ -1,38 +1,93 @@
-import React from 'react';
-import './PurchaseForm.css';
-import { useForm } from 'react-hook-form';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../../Firebase/firebase.init';
-import { Col } from 'react-bootstrap';
+import React from "react";
+import "./PurchaseForm.css";
+import { useForm } from "react-hook-form";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../Firebase/firebase.init";
+import { Col } from "react-bootstrap";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import useSingleParts from "../../../Hooks/useSingleParts";
+import { useParams } from "react-router-dom";
 
-const PurchaseForm = () => {
-    const [user] = useAuthState(auth);
-    console.log(user)
+const PurchaseForm = ({ handlePurchaseForm }) => {
+  const [user] = useAuthState(auth);
+  const { id } = useParams();
+  const [singleParts] = useSingleParts(id);
 
-    const handleCompletePurchase = (e) =>{
-        e.preventDefault();
-    }
+
   return (
     <>
-     {/* onSubmit={handleSubmit(handleSubmitParam)} */}
-      <Col>
-          <div className="purchase-form">
-              <form onSubmit={handleCompletePurchase}>
-                  <label htmlFor="name">Name: </label>
-                  <input type="text" value={user?.displayName} readOnly />
-                  <br />
-                  <label htmlFor="email">E-mail: </label>
-                  <input type="email" value={user?.email} readOnly/> <br />
-                  <label htmlFor="address">Address:</label>
-                  <input type="text" placeholder='Address' required /> <br />
-                  <label htmlFor="number">Phone Number: </label>
-                  <input type="number" placeholder='Phone Number' /> <br />
-                  <input type="submit" value="COMPLETE PURCHASE" />
-              </form>
-          </div>
-      </Col>
-    </>
-  )
-}
+      <div className="contact-form">
+        <div className="wrapper">
+          <div className="inner">
+            <form onSubmit={handlePurchaseForm}>
+              <label className="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="form-control"
+                  value={user?.displayName}
+                  readOnly
+                />
+                <span className="border"></span>
+              </label>
 
-export default PurchaseForm
+              <label className="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="form-control"
+                  value={user?.email}
+                  readOnly
+                />
+                <span className="border"></span>
+              </label>
+
+              <label className="form-group">
+                <input
+                  type="text"
+                  id="addressID"
+                  name="address"
+                  className="form-control"
+                />
+                <span>Address</span>
+                <span className="border"></span>
+              </label>
+
+              <label className="form-group">
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  className="form-control"
+                />
+                <span>Order (Quantity)</span>
+                <span className="border"></span>
+              </label>
+
+              <label className="form-group">
+                <input
+                  type="text"
+                  id="contact"
+                  name="contact"
+                  className="form-control"
+                />
+                <span>Contact Number (optional)</span>
+                <span className="border"></span>
+              </label>
+
+              <button type="submit" className="contact-submit-btn">
+                PURCHASE
+                <AiOutlineArrowRight className="submit-arrow-icon" />
+                <i className="zmdi zmdi-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default PurchaseForm;

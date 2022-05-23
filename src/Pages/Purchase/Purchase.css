@@ -1,0 +1,9 @@
+.purchase-parent{}
+.purchase-parent .img-div{
+    position: relative;
+}
+.purchase-parent .img-div img {
+    position: relative;
+    width: 46%;
+    height: 46%;
+}
