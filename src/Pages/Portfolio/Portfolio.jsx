@@ -53,13 +53,13 @@ const Portfolio = () => {
                 <p>
                   1. https://incubator-app.web.app/<br />
                   2. https://juristic-4bf27.web.app/<br />
-                  1. https://juristic-4bf27.web.app/<br />
+                  3. https://blog-react-router-devtabibur.netlify.app/<br />
                 </p>
                 <h4>WORDPRESS Project:</h4> <br />
                 <p>
                   1. https://dlckenya.com/<br />
                   2. https://dlc.co.ke/<br />
-                  1. https://breakthroughwithjeff.org/<br />
+                  3. https://breakthroughwithjeff.org/<br />
                 </p>
                 <div className="quoter">
                   <h4>Tabibur Rahman</h4>

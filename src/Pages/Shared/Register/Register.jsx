@@ -33,6 +33,11 @@ const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, hookError] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
+
+    const handleNameChange =(e)=>{
+      const userName = e.target.userName;
+      console.log(userName);
+    }
   const handleEmailChange = (e) => {
     const emailRegex = /\S+@\S+\.\S+/;
     const validEmail = emailRegex.test(e.target.value);
@@ -129,6 +134,18 @@ const Register = () => {
                 </h2>
 
                 <Form onSubmit={handleRegister}>
+
+                  <Form.Group className="mb-3" controlId="formBasicName">
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control
+                    onChange={handleNameChange}
+                      type="text"
+                      placeholder="Enter Your Name"
+                      name="userName"
+                      required
+                    />
+                  </Form.Group>
+
                   <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control

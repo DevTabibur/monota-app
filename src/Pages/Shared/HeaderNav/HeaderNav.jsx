@@ -10,6 +10,7 @@ import logo from "../../../Assets/monota-img/logo.png";
 
 const HeaderNav = () => {
   const [user] = useAuthState(auth);
+  console.log('user', user);
   return (
     <>
       <Navbar className="shadow header" collapseOnSelect expand="lg">
