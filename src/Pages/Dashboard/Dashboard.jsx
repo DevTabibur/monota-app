@@ -9,12 +9,17 @@ import "react-modern-drawer/dist/index.css";
 import { Link, Outlet } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import { GoThreeBars } from "react-icons/go";
+import useAdmin from "../../Hooks/useAdmin";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Firebase/firebase.init";
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   return (
     <>
       <Container className="py-5 drawer-page">
@@ -32,12 +37,86 @@ const Dashboard = () => {
               direction="left"
               className="bla bla bla"
             >
-              <ul className="drawer-ul">
+              {/* <ul className="drawer-ul">
+              {admin ? (
+                <>
+                  <li>
+                    <Link to="users" className="drawer-link shadow rounded">
+                      All User
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="manageOrder"
+                      className="drawer-link shadow rounded"
+                    >
+                      Manage-Order{" "}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="manageTools"
+                      className="drawer-link shadow rounded"
+                    >
+                      Manage-Tools{" "}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="add" className="drawer-link shadow rounded">
+                      Add Products{" "}
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <>
                 <li>
-                  <Link to="users" className="drawer-link shadow rounded">
-                    All User
+                  <Link to="profile" className="drawer-link shadow rounded">
+                    My Profile
                   </Link>
                 </li>
+
+                <li>
+                  <Link to="review" className="drawer-link shadow rounded">
+                    Add Review
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="order" className="drawer-link shadow rounded">
+                    My Order
+                  </Link>
+                </li>
+                </>
+              )}
+              </ul> */}
+
+              <ul className="drawer-ul">
+                  <li>
+                    <Link to="users" className="drawer-link shadow rounded">
+                      All User
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="manageOrder"
+                      className="drawer-link shadow rounded"
+                    >
+                      Manage-Order{" "}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="manageTools"
+                      className="drawer-link shadow rounded"
+                    >
+                      Manage-Tools{" "}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="add" className="drawer-link shadow rounded">
+                      Add Products{" "}
+                    </Link>
+                  </li>
                 <li>
                   <Link to="profile" className="drawer-link shadow rounded">
                     My Profile
@@ -56,6 +135,8 @@ const Dashboard = () => {
                   </Link>
                 </li>
               </ul>
+
+              
             </Drawer>
           </Col>
 

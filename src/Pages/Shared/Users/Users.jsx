@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
-// import { useQuery } from 'react-query';
+import { useQuery } from 'react-query';
 // import Loading from '../Shared/Loading';
 import UserRow from "../UserRow/UserRow";
 

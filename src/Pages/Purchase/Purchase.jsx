@@ -26,6 +26,9 @@ const Purchase = () => {
     const address = e.target.address.value;
     const addedQuantity = e.target.quantity.value;
     const contact = e.target.contact.value;
+    const userInput = {
+      userName, email, address, addedQuantity, contact
+    }
 
     // if ( singleParts?.minimumQuantity < addedQuantity){
     //   toast.error("Please add quantity above minimum quantity", {
@@ -39,20 +42,15 @@ const Purchase = () => {
 
     // }
 
-    const purchaseInfo = {
-      userName, email, address, addedQuantity, contact
-    }
-    // send data to server for update
-    const url = `http://localhost:5000/parts/${id}`;
-    fetch(url, {
-      method: "PUT",
-      headers:{
-        'content-type':'application/json'
+    //post order to database
+    fetch('http://localhost:5000/orders', {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
       },
-      body: JSON.stringify(purchaseInfo),
-    })
-    .then( res=> res.json())
-    .then(data => {
+      body: JSON.stringify(userInput)
+  })
+      .then(res => res.json()).then(data => {
       console.log('data', data);
       toast.success('Successfully added quantity', {toastId: "Success"})
       e.target.reset()

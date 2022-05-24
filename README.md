@@ -16,6 +16,7 @@
 11. React Swiper (npm)
 12. React Hook Form
 13. Modern Drawer (npm)
+14. React Query
 
 ## Website Feature
 
