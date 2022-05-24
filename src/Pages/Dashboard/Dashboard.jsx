@@ -34,6 +34,11 @@ const Dashboard = () => {
             >
               <ul className="drawer-ul">
                 <li>
+                  <Link to="users" className="drawer-link shadow rounded">
+                    All User
+                  </Link>
+                </li>
+                <li>
                   <Link to="profile" className="drawer-link shadow rounded">
                     My Profile
                   </Link>

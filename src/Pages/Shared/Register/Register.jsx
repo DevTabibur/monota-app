@@ -1,9 +1,11 @@
+import { updateProfile } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import {
   useAuthState,
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
@@ -12,34 +14,39 @@ import useToken from "../../../Hooks/useToken";
 import "./Register.css";
 
 const Register = () => {
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [user1] = useAuthState(auth);
+  const [token] = useToken( user1 );
 
-  const token = useToken(user1);
+
   const [sendEmailVerification] = useSendEmailVerification(auth);
 
   const [showPass, setShowPass] = useState(false);
 
   const [userInfo, setUserInfo] = useState({
+    userName: "",
     email: "",
     password: "",
     confirmPass: "",
   });
 
   const [errors, setErrors] = useState({
+    userName: "",
     email: "",
     password: "",
     general: "",
   });
 
+
   const [createUserWithEmailAndPassword, user, loading, hookError] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    
 
 
     const handleNameChange =(e)=>{
-      const userName = e.target.userName;
+      const userName = e.target.value;
       setUserInfo({...userInfo, userName: userName});
       setErrors({...errors, userName: ""});
-      console.log(userName);
     }
   const handleEmailChange = (e) => {
     const emailRegex = /\S+@\S+\.\S+/;
@@ -83,6 +90,11 @@ const Register = () => {
     e.preventDefault();
     createUserWithEmailAndPassword(userInfo.email, userInfo.password);
     await sendEmailVerification();
+
+    const displayName= userInfo.userName;
+    await updateProfile({ displayName });
+        alert('Updated profile');
+
   };
 
   useEffect(() => {
@@ -109,10 +121,10 @@ const Register = () => {
   const from = location.state?.from?.pathname || "/";
 
   useEffect(()=>{
-    if (user1) {
+    if (user1 || user) {
       navigate(from, { replace: true });
     }
-  }, [])
+  }, [user1, user])
 
 
   return (
@@ -145,7 +157,6 @@ const Register = () => {
                     onChange={handleNameChange}
                       type="text"
                       placeholder="Enter Your Name"
-                      name="userName"
                       required
                     />
                   </Form.Group>

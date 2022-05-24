@@ -18,6 +18,8 @@ import Dashboard from './Pages/Dashboard/Dashboard.jsx';
 import Profile from "./Pages/Profile/Profile";
 import MyOrder from "./Pages/My Orders/MyOrder";
 import AddReview from "./Pages/Add Review/AddReview";
+import Payment from "./Pages/Payment/Payment";
+import Users from "./Pages/Shared/Users/Users";
 
 
 // demo https://opencart.opencartworks.com/themes/so_monota/layout6/
@@ -30,6 +32,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
+        <Route path="/payment" element={<Payment />}></Route>
 
         <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/purchase/:id" element={
@@ -47,6 +50,7 @@ function App() {
           <Route path="profile" element={<Profile/>}></Route>
           <Route path="order" element={<MyOrder/>}></Route>
           <Route path="review" element={<AddReview/>}></Route>
+          <Route path="users" element={<Users/>}></Route>
         </Route>
 
         <Route path="/login" element={<Login />}></Route>

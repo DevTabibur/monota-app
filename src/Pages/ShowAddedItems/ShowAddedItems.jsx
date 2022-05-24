@@ -1,5 +1,6 @@
 import react, { useState } from "react";
 import { Card, Col, Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const ShowAddedItems = ({ item, handleDelete }) => {
   // console.log(item);
@@ -23,9 +24,10 @@ const ShowAddedItems = ({ item, handleDelete }) => {
               <h5>Quantity: {item.quantity}</h5>
               <p>{item.description}</p>
             </Card.Text>
-            <button onClick={() => handleDelete(item._id)} className="card-btn border-0 bg-danger text-white px-4 py-3">
+            <button onClick={() => handleDelete(item._id)} className="card-btn border-0 bg-danger text-white px-4 py-3 rounded shadow">
               DELETE
             </button>
+            <Link to='/payment' className="ms-3 shadow rounded card-btn border-0 bg-info text-white px-4 py-3">PAYMENT</Link>
           </Card.Body>
         </Card>
       </Col>
