@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <>
-      {/* <HeroBanner />
+      <HeroBanner />
       <Container className="services py-5">
         <Row className='g-3'>
           <Col lg={4} md={4} sm={6} className="">
@@ -49,7 +49,7 @@ const Home = () => {
             </div>
           </Col>
         </Row>
-      </Container> */}
+      </Container>
 
       {/* <Services/>
       <FindParts /> */}
@@ -63,10 +63,10 @@ const Home = () => {
         </Row>
       </Container>
 
-      {/* <Summary/> */}
+      <Summary/>
 
       {/* Reviews */}
-      {/* <Container className="pt-4">
+      <Container className="pt-4">
       <h2 className="title mt-3 mb-5 pb-4 d-flex justify-content-center">
         What Client says about us
       </h2>
@@ -78,7 +78,7 @@ const Home = () => {
             />)
           }
         </Row>
-      </Container> */}
+      </Container>
 
 
     </>
