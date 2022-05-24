@@ -21,7 +21,7 @@ const Purchase = () => {
 
   const handlePurchaseForm = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
+    const userName = e.target.userName.value;
     const email = e.target.email.value;
     const address = e.target.address.value;
     const addedQuantity = e.target.quantity.value;
@@ -40,7 +40,7 @@ const Purchase = () => {
     // }
 
     const purchaseInfo = {
-      name, email, address, addedQuantity, contact
+      userName, email, address, addedQuantity, contact
     }
     // send data to server for update
     const url = `http://localhost:5000/parts/${id}`;

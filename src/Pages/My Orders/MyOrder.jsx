@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Table } from 'react-bootstrap';
 import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../Firebase/firebase.init';
 import ShowAddedItems from '../ShowAddedItems/ShowAddedItems';
 import SpinnerLoader from '../SpinnerLoader/SpinnerLoader';
@@ -24,6 +25,7 @@ const MyOrder = () => {
 
   const navigate = useNavigate();
   const [items, setItems] = useState([]);
+  
   const handleDelete = (id) => {
     const confirm = window.confirm("Are you sure?");
     if (confirm) {
@@ -46,7 +48,7 @@ const MyOrder = () => {
   useEffect(() => {
     const getItems = async () => {
       const email = user?.email;
-      const url = `https://rocky-caverns-33077.herokuapp.com/singleItem?email=${email}`;
+      const url = `http://localhost:5000/singleItem?email=${email}`;
       
       try {
         const { data } = await axios.get(url, {
@@ -70,7 +72,7 @@ const MyOrder = () => {
   
   return (
     <>
-      {/* {items.length ? (
+      {items.length ? (
         <Container className="py-5">
         <div className="section-title mb-4">
           <h2>Your Added Items</h2>
@@ -86,23 +88,7 @@ const MyOrder = () => {
           ))}
         </Row>
       </Container>
-      ) : (<SpinnerLoader/>)} */}
-
-      <Container className="py-5">
-        <div className="section-title mb-4">
-          <h2>Your Added Items</h2>
-          <p className="mb-0">here you can find your own item.</p>
-        </div>
-        <Row>
-          {items.map((item) => (
-            <ShowAddedItems
-              key={item._id}
-              item={item}
-              handleDelete={handleDelete}
-            />
-          ))}
-        </Row>
-      </Container>
+      ) : (<SpinnerLoader/>)}
     </>
   )
 }

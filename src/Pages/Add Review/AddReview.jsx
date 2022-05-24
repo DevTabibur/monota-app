@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 
 const AddReview = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
 
   const handleReviewForm = (e) => {
     e.preventDefault();
@@ -18,13 +17,14 @@ const AddReview = () => {
 
     const addReview = { name, ratings, review };
 
-    // send db to server
     if(  ratings >= 1 && ratings <= 5){
+    // send db to server
       const url = `http://localhost:5000/reviews`;
     fetch(url, {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem('token')}`
       },
       body: JSON.stringify(addReview),
     })
@@ -36,7 +36,7 @@ const AddReview = () => {
     })
     }
     else{
-      toast.error('You have to put review between 1 to 5 start', {toastId:"error"})
+      toast.error('You have to put review between 1 to 5 ratings', {toastId:"error"})
     }
   };
 
@@ -73,15 +73,6 @@ const AddReview = () => {
           />
         </FloatingLabel>
 
-        {/* <Form.Group className="mb-3" controlId="formUpload">
-          <Form.Label>Upload your image</Form.Label>
-          <Form.Control
-            type="file"
-            name="uploadImage"
-            placeholder="Upload your image"
-            required
-          />
-        </Form.Group> */}
 
         <Button variant="danger" type="submit" className="mt-4">
           UPLOAD

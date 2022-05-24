@@ -23,8 +23,8 @@ const PurchaseForm = ({ handlePurchaseForm }) => {
               <label className="form-group">
                 <input
                   type="text"
-                  id="name"
-                  name="name"
+                  id="userName"
+                  name="userName"
                   className="form-control"
                   value={user?.displayName}
                   readOnly
