@@ -1,10 +1,9 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-const UserRow = () => {
+const UserRow = ({user}) => {
     
-
-//   const { email, role } = user;
+  const { email, role } = user;
   const makeAdmin = () => {
     alert("make admin");
     // fetch(`http://localhost:5000/user/admin/${email}`, {
@@ -30,36 +29,17 @@ const UserRow = () => {
   return (
     <>
       <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td colSpan={2}>Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-      {/* <tr>
-        <th>1</th>
-        <td>{email}</td>
-        <td>
-          {role !== "admin" && (
-            <button onClick={makeAdmin} className="btn btn-xs">
+        <td>{user.displayName}</td>
+        <td>{user.email}</td>
+        <td>{role !== "admin" && (
+            <button onClick={makeAdmin} className="btn btn-info">
               Make Admin
             </button>
-          )}
+          )}</td>
+          <td>
+          <button className="btn btn-warning">Remove User</button>
         </td>
-        <td>
-          <button className="btn btn-xs">Remove User</button>
-        </td>
-      </tr> */}
+      </tr>
     </>
   );
 };

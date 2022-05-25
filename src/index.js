@@ -1,15 +1,41 @@
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+// import './index.css';
+// import App from './App';
+// import { BrowserRouter } from "react-router-dom";
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <BrowserRouter>
+//     <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+//   </BrowserRouter>
+// );
+
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
+import {
 
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
+
+import { ReactQueryDevtools } from 'react-query/devtools'
+
+
+// Create a client
+const queryClient = new QueryClient()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-    <App />
-  </React.StrictMode>
-  </BrowserRouter>
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+  </QueryClientProvider>
 );
-

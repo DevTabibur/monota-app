@@ -5,16 +5,16 @@ import { useQuery } from 'react-query';
 import UserRow from "../UserRow/UserRow";
 
 const Users = () => {
-  // const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
-  //     method: 'GET',
-  //     headers:{
-  //         authorization: `Bearer ${localStorage.getItem('accessToken')}`
-  //     }
-  // }).then(res => res.json()));
+  const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+      method: 'GET',
+      headers:{
+          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+      }
+  }).then(res => res.json()));
   // if (isLoading) {
   //     return <Loading></Loading>
   // }
-
+console.log('user', users)
   return (
     <>
       <Container>
@@ -23,14 +23,19 @@ const Users = () => {
             <Table striped bordered hover variant="dark" size="sm" className="rounded-4">
               <thead>
                 <tr>
-                  <th>_id</th>
                   <th>Name</th>
                   <th>Email</th>
+                  <th>Role</th>
                   <th>Role</th>
                 </tr>
               </thead>
               <tbody>
-                <UserRow/>
+                {
+                  users?.map(user => <UserRow
+                    key={user}
+                    user={user}
+                  />)
+                }
               </tbody>
             </Table>
           </Col>

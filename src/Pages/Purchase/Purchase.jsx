@@ -7,8 +7,7 @@ import { useForm } from "react-hook-form";
 import auth from "../../Firebase/firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import PurchaseForm from "../Shared/PurchaseForm/PurchaseForm";
-import { ToastContainer, toast } from 'react-toastify';
-
+import { ToastContainer, toast } from "react-toastify";
 
 const Purchase = () => {
   const [user] = useAuthState(auth);
@@ -27,35 +26,37 @@ const Purchase = () => {
     const addedQuantity = e.target.quantity.value;
     const contact = e.target.contact.value;
     const userInput = {
-      userName, email, address, addedQuantity, contact
+      userName,
+      email,
+      address,
+      addedQuantity,
+      contact,
+    };
+
+    if (
+      singleParts?.minimumQuantity < addedQuantity &&
+      addedQuantity > singleParts?.availableQuantity
+    ) {
+      //post order to database
+      fetch("http://localhost:5000/orders", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(userInput),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("data", data);
+          toast.success("Successfully added quantity", { toastId: "Success" });
+          e.target.reset();
+        });
+    } else {
+      toast.error(
+        "You have to add quantity above the minimum and below the maximum quantity",
+        { toastId: "error" }
+      );
     }
-
-    // if ( singleParts?.minimumQuantity < addedQuantity){
-    //   toast.error("Please add quantity above minimum quantity", {
-    //     toastId: "quantity",
-    //   });
-    // }
-    // else if(singleParts?.availableQuantity > addedQuantity){
-    //   toast.error("You have to add quantity below available quantity", {
-    //     toastId: "quantity",
-    //   });
-
-    // }
-
-    //post order to database
-    fetch('http://localhost:5000/orders', {
-      method: 'POST',
-      headers: {
-          'content-type': 'application/json'
-      },
-      body: JSON.stringify(userInput)
-  })
-      .then(res => res.json()).then(data => {
-      console.log('data', data);
-      toast.success('Successfully added quantity', {toastId: "Success"})
-      e.target.reset()
-    })
-
   };
 
   return (
