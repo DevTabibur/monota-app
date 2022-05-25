@@ -34,6 +34,7 @@ console.log('user', users)
                   users?.map(user => <UserRow
                     key={user}
                     user={user}
+                    refetch={refetch}
                   />)
                 }
               </tbody>
