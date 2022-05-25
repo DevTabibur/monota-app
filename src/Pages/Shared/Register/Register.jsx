@@ -17,8 +17,10 @@ import "./Register.css";
 const Register = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [user1] = useAuthState(auth);
-  const [token] = useToken( user1 );
 
+
+  const [userName, setUserName] = useState('')
+  const [token] = useToken(user1, userName);
 
   const [sendEmailVerification] = useSendEmailVerification(auth);
 
@@ -38,7 +40,8 @@ const Register = () => {
     general: "",
   });
 
-
+  // const displayName = `${userInfo.userName}`;
+  // setUserName(displayName);
   const [createUserWithEmailAndPassword, user, loading, hookError] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     
@@ -48,7 +51,9 @@ const Register = () => {
       const userName = e.target.value;
       setUserInfo({...userInfo, userName: userName});
       setErrors({...errors, userName: ""});
+      setUserName(userName)
     }
+
   const handleEmailChange = (e) => {
     const emailRegex = /\S+@\S+\.\S+/;
     const validEmail = emailRegex.test(e.target.value);
