@@ -11,8 +11,8 @@ const Modal = ({ modal, sendEvent, setModal }) => {
                     <h3 className="font-bold text-lg">Are You Sure?</h3>
 
                     <div className="modal-action">
-                        <label onClick={() => sendEvent(modal._id)} for="deleteModal" className="btn">Yes</label>
-                        <label onClick={() => { toast.info('Ok,Try next time.'); setModal({}) }} for="deleteModal" className="btn">No</label>
+                        <label onClick={() => sendEvent(modal._id)} htmlFor="deleteModal" className="btn">Yes</label>
+                        <label onClick={() => { toast.info('Ok,Try next time.'); setModal({}) }} htmlFor="deleteModal" className="btn">No</label>
                     </div>
                 </div>
             </div>

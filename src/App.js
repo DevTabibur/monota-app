@@ -24,7 +24,6 @@ import AddProducts from "./Pages/AddProducts/AddProducts";
 import Payment from "./Pages/Dashboard/payment";
 
 
-
 function App() {
   return (
     <>
@@ -62,7 +61,7 @@ function App() {
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <ToastContainer/>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 }
