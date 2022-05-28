@@ -8,9 +8,10 @@ import PaymentForm from './PaymentForm';
 
 
 const stripePromise = loadStripe('pk_test_51L4JVuA39z7TXqPSg5UDBbSy1LBrOiJpXPYtM1YLg9fScUUnADN0zFqetXNg7HGkgO0go5P0CcXWw0SgZg5Hkps500SD41aRrD');
+
 const Payment = () => {
     const { id } = useParams()
-    const url = `https://stormy-bayou-62598.herokuapp.com/payment/${id}`
+    const url = `http://localhost:5000/payment/${id}`
     const { data: myOrder, refetch, isLoading } = useQuery(['myOrder', id], () => fetch(url, {
         method: 'GET',
         headers: {
@@ -26,7 +27,7 @@ const Payment = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 mt-10'>
             <div className="card w-50 max-w-md bg-base-100 shadow-xl my-12">
                 <div className="card-body">
-                    <p className="text-amber-700 font-bold text-4xl sp-style">Hey, {myOrder.userName
+                    <p className="text-amber-700 font-bold text-4xl sp-style">Hey, {myOrder?.userName
                     }</p>
                     <h2 className="sp-style text-2xl ">
                         Please Pay for purchasing :- <span className="text-blue-700"> {myOrder.productName}</span>

@@ -12,6 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 const Purchase = () => {
   const [user] = useAuthState(auth);
   const { id } = useParams();
+  console.log('id', id);
   const [singleParts] = useSingleParts(id);
 
   const handleQuantity = (e) => {
@@ -34,7 +35,7 @@ const Purchase = () => {
     };
 
     if (
-      singleParts?.minimumQuantity < addedQuantity &&
+      singleParts?.minimumQuantity < addedQuantity ||
       addedQuantity > singleParts?.availableQuantity
     ) {
       //post order to database

@@ -17,11 +17,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import Dashboard from './Pages/Dashboard/Dashboard.jsx';
 import Profile from "./Pages/Profile/Profile";
 import MyOrder from "./Pages/My Orders/MyOrder";
-import AddReview from "./Pages/Add Review/AddReview";
-import Payment from "./Pages/Payment/Payment";
+import AddReview from "./Pages/Dashboard/payment";
 import Users from "./Pages/Shared/Users/Users";
 import ManageOrder from "./Pages/ManageOrder/ManageOrder";
 import AddProducts from "./Pages/AddProducts/AddProducts";
+import Payment from "./Pages/Dashboard/payment";
 
 
 
@@ -33,7 +33,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
-        <Route path="/payment" element={<Payment />}></Route>
+        <Route path="/payment" element={<Payment/>}></Route>
 
         <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/purchase/:id" element={
@@ -54,6 +54,7 @@ function App() {
           <Route path="users" element={<Users/>}></Route>
           <Route path="manageOrder" element={<ManageOrder/>}></Route>
           <Route path="add" element={<AddProducts/>}></Route>
+          <Route path="order/payment/:id" element={<Payment/>}></Route>
         </Route>
 
         <Route path="/login" element={<Login />}></Route>

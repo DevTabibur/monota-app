@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const ShowAddedItems = ({ item, handleDelete }) => {
   // console.log(item);
+  const {_id} = item;
   return (
     <>
       <Col
@@ -27,7 +28,7 @@ const ShowAddedItems = ({ item, handleDelete }) => {
             <button onClick={() => handleDelete(item._id)} className="card-btn border-0 bg-danger text-white px-4 py-3 rounded shadow">
               DELETE
             </button>
-            <Link to='/payment' className="ms-3 shadow rounded card-btn border-0 bg-info text-white px-4 py-3">PAYMENT</Link>
+            <Link to={`/dashboard/order/payment/${_id}`} className="ms-3 shadow rounded card-btn border-0 bg-info text-white px-4 py-3">PAYMENT</Link>
           </Card.Body>
         </Card>
       </Col>

@@ -48,8 +48,8 @@ const MyOrder = () => {
 
   const getItems = async () => {
     const email = user?.email
-    const url = `http://localhost:5000/orders?email=${email}`
-    // console.log(url);
+    const url = `http://localhost:5000/orders/${email}`
+    console.log(url);
     try {
         const { data } = await axios.get(url, {
             headers: {
