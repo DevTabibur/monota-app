@@ -17,7 +17,6 @@ const PurchaseForm = ({ handlePurchaseForm }) => {
   const navigate = useNavigate();
 
   const [filterUser, setFilterUser] = useState({});
-console.log('filterUser', filterUser);
 
   const getItems = async () => {
     const email = user?.email;

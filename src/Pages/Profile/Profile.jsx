@@ -1,9 +1,18 @@
 import React from 'react';
 import './Profile.css';
+import {Container, Row, Col} from 'react-bootstrap';
 
 const Profile = () => {
   return (
-    <div>Profile</div>
+    <>
+      <Container>
+        <Row>
+          <Col>
+            your profile is here
+          </Col>
+        </Row>
+      </Container>
+    </>
   )
 }
 

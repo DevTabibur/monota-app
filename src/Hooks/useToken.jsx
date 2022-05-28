@@ -15,7 +15,6 @@ const useToken = (user, userName) => {
         displayName: displayName,
         photoURL: user?.photoURL,
       };
-  console.log(displayName, email);
 
 
       if (email) {
@@ -30,7 +29,6 @@ const useToken = (user, userName) => {
           .then((data) => {
             setToken(data.getToken);
             localStorage.setItem("token", data.getToken);
-            console.log("token", data);
           });
         // console.log(data.getToken);
         // setToken(data.getToken);

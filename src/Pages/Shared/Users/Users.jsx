@@ -14,7 +14,7 @@ const Users = () => {
   // if (isLoading) {
   //     return <Loading></Loading>
   // }
-console.log('user', users)
+console.log('users', users)
   return (
     <>
       <Container>

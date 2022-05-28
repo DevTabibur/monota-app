@@ -20,9 +20,10 @@ import MyOrder from "./Pages/My Orders/MyOrder";
 import AddReview from "./Pages/Add Review/AddReview";
 import Payment from "./Pages/Payment/Payment";
 import Users from "./Pages/Shared/Users/Users";
+import ManageOrder from "./Pages/ManageOrder/ManageOrder";
+import AddProducts from "./Pages/AddProducts/AddProducts";
 
 
-// demo https://opencart.opencartworks.com/themes/so_monota/layout6/
 
 function App() {
   return (
@@ -51,6 +52,8 @@ function App() {
           <Route path="order" element={<MyOrder/>}></Route>
           <Route path="review" element={<AddReview/>}></Route>
           <Route path="users" element={<Users/>}></Route>
+          <Route path="manageOrder" element={<ManageOrder/>}></Route>
+          <Route path="add" element={<AddProducts/>}></Route>
         </Route>
 
         <Route path="/login" element={<Login />}></Route>

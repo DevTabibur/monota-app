@@ -1,15 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./HeaderNav.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../Firebase/firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import logo from "../../../Assets/monota-img/logo.png";
+import axios from "axios";
+import useToken from "../../../Hooks/useToken";
 
 const HeaderNav = () => {
   const [user] = useAuthState(auth);
+  const [token] = useToken(user)
+
+  // const navigate = useNavigate();
+
+  // const [filterUser, setFilterUser] = useState({});
+
+  // const getItems = async () => {
+  //   const email = user?.email;
+  //   const url = `http://localhost:5000/users/${email}`;
+  //   // console.log(url);
+  //   try {
+  //     const { data } = await axios.get(url, {
+  //       headers: {
+  //         authorization: `Bearer ${localStorage.getItem("token")}`,
+  //       },
+  //     });
+  //     // console.log(data, "data");
+  //     setFilterUser(data);
+  //   } catch (error) {
+  //     // console.log(error);
+  //     if (error.response.status === 403 || error.response.status === 401) {
+  //       signOut(auth);
+  //       navigate("/login");
+  //     }
+  //     // alert(error.message)
+  //   }
+  // };
+  // getItems();
+
+
   return (
     <>
       <Navbar className="shadow header" collapseOnSelect expand="lg">
@@ -35,7 +67,6 @@ const HeaderNav = () => {
               </Nav.Link>
 
               {/* // only login user can see this route */}
-              
 
               {user && (
                 <>
@@ -46,9 +77,11 @@ const HeaderNav = () => {
                 </>
               )}
 
-              {
-                user && <Nav.Link className="header-link" to="/">{user.displayName}</Nav.Link>
-              }
+              {user && (
+                <Nav.Link className="header-link" to="/">
+                  {user?.displayName}
+                </Nav.Link>
+              )}
               {user ? (
                 <button
                   className="header-link sign-out-btn"
@@ -62,9 +95,6 @@ const HeaderNav = () => {
                 </Nav.Link>
               )}
             </Nav>
-
-
-
           </Navbar.Collapse>
         </Container>
       </Navbar>
