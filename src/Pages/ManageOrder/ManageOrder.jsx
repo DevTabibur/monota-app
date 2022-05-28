@@ -14,7 +14,7 @@ const ManageOrder = () => {
     isLoading,
     refetch,
   } = useQuery("allorders", () =>
-    fetch(`http://localhost:5000/orders`, {
+    fetch(`https://glacial-cove-96112.herokuapp.com/orders`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -30,7 +30,7 @@ const ManageOrder = () => {
     const proceed = window.confirm("are you want to delete?");
     if (proceed) {
       console.log("id", id);
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://glacial-cove-96112.herokuapp.com/orders/${id}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",

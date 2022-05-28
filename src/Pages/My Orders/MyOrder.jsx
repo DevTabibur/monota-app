@@ -30,7 +30,7 @@ const MyOrder = () => {
   const handleDelete = (id) => {
     const confirm = window.confirm("Are you sure?");
     if (confirm) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://glacial-cove-96112.herokuapp.com/orders/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -48,7 +48,7 @@ const MyOrder = () => {
 
   const getItems = async () => {
     const email = user?.email
-    const url = `http://localhost:5000/orders/${email}`
+    const url = `https://glacial-cove-96112.herokuapp.com/orders/${email}`
     console.log(url);
     try {
         const { data } = await axios.get(url, {

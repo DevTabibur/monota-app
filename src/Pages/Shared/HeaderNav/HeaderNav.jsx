@@ -20,7 +20,7 @@ const HeaderNav = () => {
 
   // const getItems = async () => {
   //   const email = user?.email;
-  //   const url = `http://localhost:5000/users/${email}`;
+  //   const url = `https://glacial-cove-96112.herokuapp.com/users/${email}`;
   //   // console.log(url);
   //   try {
   //     const { data } = await axios.get(url, {

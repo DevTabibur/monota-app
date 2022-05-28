@@ -19,7 +19,7 @@ const AddReview = () => {
 
     if(  ratings >= 1 && ratings <= 5){
     // send db to server
-      const url = `http://localhost:5000/reviews`;
+      const url = `https://glacial-cove-96112.herokuapp.com/reviews`;
     fetch(url, {
       method: "POST",
       headers: {

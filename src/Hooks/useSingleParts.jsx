@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const useSingleParts = (id) => {
     const [singleParts, setSingleParts]  = useState([]);
     useEffect(()=>{
-        const url = `http://localhost:5000/parts/${id}`;
+        const url = `https://glacial-cove-96112.herokuapp.com/parts/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => {

@@ -39,7 +39,7 @@ const Purchase = () => {
       addedQuantity > singleParts?.availableQuantity
     ) {
       //post order to database
-      fetch("http://localhost:5000/orders", {
+      fetch("https://glacial-cove-96112.herokuapp.com/orders", {
         method: "POST",
         headers: {
           "content-type": "application/json",

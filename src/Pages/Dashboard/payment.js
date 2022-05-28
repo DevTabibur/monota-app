@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L4JVuA39z7TXqPSg5UDBbSy1LBrOiJpXPYtM
 
 const Payment = () => {
     const { id } = useParams()
-    const url = `http://localhost:5000/payment/${id}`
+    const url = `https://glacial-cove-96112.herokuapp.com/payment/${id}`
     const { data: myOrder, refetch, isLoading } = useQuery(['myOrder', id], () => fetch(url, {
         method: 'GET',
         headers: {
